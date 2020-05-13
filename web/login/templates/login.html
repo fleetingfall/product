@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}登录{% endblock %}
+
+{% block head %}
+<script src="{{url_for('.static',filename='login.js')}}"></script>
+{% endblock %}
+
+{% block body%}
+<form id="login_form" action="./check" method="post">
+    <fieldset>
+         <legend>登录</legend>
+        用户名：<input class='easyui-textbox' name="name"  data-options="required:true"/><br/><br/>
+        密码：<input class="easyui-passwordbox" name="pwd" data-options="required:true"/><br/><br/>
+        验证码：<input class='easyui-textbox' name="txtCode" data-options="required:true"/>
+        <img id="img_code" title="点击刷新" onclick="refreshCode(this)"/><br/><br/>
+        <input type="submit" value="登录"/>
+    </fieldset>
+</form>
+{% endblock %}

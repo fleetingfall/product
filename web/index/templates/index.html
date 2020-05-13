@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}主页{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='InsdepUI_EasyUI/expand/jquery-easyui-rtl/easyui-rtl.css')}}">
+<script type="text/javascript" src="{{url_for('static', filename='InsdepUI_EasyUI/expand/jquery-easyui-rtl/easyui-rtl.js')}}"></script>
+<script src="{{url_for('bp_index.static',filename='index.js')}}"></script>
+
+<script>
+    var name="{{account}}";
+
+</script>
+{% endblock %}
+
+{% block body%}
+<body class="easyui-layout">
+
+
+    <div data-options="region:'west',title:'目录',split:true" style="width:180px;">
+        <div class="easyui-accordion" data-options="fit:true,border:false">
+            <div title="商品的价格分析" style="padding:10px;">
+                <a id="priceToSales" href="#" onclick=show('商品价格对销售量的影响分析','/tea/pic/price_count_influence')>商品价格对销售量的影响分析</a><br/><br/>
+                <a id="priceToMoney" href="#" onclick="show('商品价格对销售额的影响分析','/tea/pic/price_money_influence')">商品价格对销售额的影响分析</a><br/><br/>
+                <a id="price_rangeToSales" href="#" onclick="show('不同价格区间对应商品销量分布情况','/tea/pic/priceRange_count')">不同价格区间对应商品销量分布情况</a><br/><br/>
+            </div>
+            <div title="商品的数量分析" style="padding:10px;">
+                <a id="priceToCount" href="#" onclick="show('不同价格的商品频数分布','/tea/pic/price_frequency')">不同价格对于的商品频数分布</a><br/><br/>
+                <a id="saleaToCount" href="#" onclick="show('不同销量的商品频数分布','/tea/pic/sales_frequency')">不同销量对应商品频数分布</a><br/><br/>
+                <a id="provinceToCount" href="#" onclick="show('不同省份商品数量分布','/tea/pic/province_count')">不同省份商品数量分布</a><br/><br/>
+            </div>
+            <div title="商品的销量分析" data-options="selected:true" style="padding:10px">
+                <a id="top10" href="#" onclick="show('茶叶类型销量前十','/tea/pic/type_sales')">茶叶类型销量前十</a><br/><br/>
+                <a id="map_salea" href="#" onclick="show('不同省份商品销量分布','/tea/pic/map_province')">不同省份商品销量分布</a><br/><br/>
+                <a id="fuj_sales" href="#" onclick="show('福建省城市商品销量分布','/tea/pic/map_fuj')">福建省城市商品销量分布</a><br/><br/>
+                <a id="zhej_sales" href="#" onclick="show('浙江省城市商品销量分布','/tea/pic/map_zhej')">浙江省城市商品销量分布</a><br/><br/>
+                <a id="wordcloud" href="#" onclick="show('茶叶词云图','/tea/pic/wordcloud')">茶叶词云图</a><br/><br/>
+            </div>
+            <div title="用户信息" style="padding:10px">
+                <a id="message" href="#" onclick="show('用户信息','/tea/member/')">用户信息</a><br/><br/>
+                <a id="update_mes" href="#" onclick="show('修改信息','/tea/member/update_member')">修改信息</a><br/><br/>
+                <a id="delete" href="#" onclick="show('退出登录','/tea/delete')">退出登录</a><br/><br/>
+
+            </div>
+        </div>
+    </div>
+
+     <div data-options="region:'center',title:'欢迎'+ name" style="padding:5px;">
+        <div id="content-pic"  class="easyui-panel" style="text-align:center" data-options="fit:true">
+        </div>
+     </div>
+
+</body>
+{% endblock %}

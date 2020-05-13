@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}用户信息{% endblock %}
+
+{% block head %}{% endblock %}
+
+{% block body %}
+<div style="text-align:center,font-size:12px,margin-top:15px">
+    ID：<span style="">{{ID}}</span><br/><br/>
+    用户名：<span>{{account}}</span><br/><br/>
+    密码：<span>{{password}}</span><br/><br/>
+    等级：<span>{{grade}}</span><br/><br/>
+    email：<span>{{email}}</span><br/><br/>
+    tele：<span>{{telephone}}</span><br/><br/>
+</div>
+{% endblock %}

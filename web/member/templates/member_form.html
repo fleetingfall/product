@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}{% endblock %}
+
+{% block head %}{% endblock %}
+
+{% block body %}
+<form id="member_form" method="post" action="/tea/member/update_member">
+    ID：<input class='easyui-numberbox' id='ID' name='ID' data-options="required:true"/><br/><br/>
+    用户名：<input class='easyui-textbox' name='account' data-options="required:true"/><br/><br/>
+    密码：<input class='easyui-textbox' name='password' data-options="required:true"/><br/><br/>
+    email：<input class='easyui-textbox' name='email' data-options="required:true"/><br/><br/>
+    tele：<input class='easyui-textbox' name='telephone' data-options="required:true"/><br/><br/>
+</form>
+{% endblock %}
